@@ -72,3 +72,5 @@
     line: "pipeline.batch.delay: {{logstash_pipeline_batch_delay}}"
   when: not ansible_check_mode and logstash_pipeline_batch_delay is defined
   notify: reload logstash
+
+- include: jvm_options.yml

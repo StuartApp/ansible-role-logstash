@@ -42,3 +42,6 @@ logstash_configuration_files:
   - filters/15-drupal.conf
 
 #logtash_custom_patterns_file: custom-patterns
+
+logstash_init_heap: 1g
+logstash_max_heap: 1g
