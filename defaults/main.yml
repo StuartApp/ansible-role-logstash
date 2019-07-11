@@ -3,8 +3,10 @@ logstash_config_dir: /etc/logstash
 # Old 2.x repo"
 # logstash_repo: "deb http://packages.elasticsearch.org/logstash/2.3/debian stable main"
 # New 5.x repo
-logstash_repo: "deb https://artifacts.elastic.co/packages/5.x/apt stable main"
+logstash_version: '6.x'
+logstash_repo: "deb https://artifacts.elastic.co/packages/{{ logstash_version }}/apt stable main"
 logstash_apt_key: "http://packages.elasticsearch.org/GPG-KEY-elasticsearch"
+
 
 logstash_listen_port_beats: 5044
 
@@ -14,13 +16,15 @@ logstash_elasticsearch_hosts:
 logstash_local_syslog_path: /var/log/syslog
 logstash_monitor_local_syslog: true
 
+logstash_dir: /usr/share/logstash
+
 logstash_ssl_dir: /etc/pki/logstash
 logstash_ssl_certificate_file: ""
 logstash_ssl_key_file: ""
 logstash_ssl_ca_file: ""
 logstash_ssl_verify_mode: "none"
 
-logstash_enabled_on_boot: yes
+logstash_enabled_on_boot: true
 
 logstash_install_plugins:
   - logstash-input-beats

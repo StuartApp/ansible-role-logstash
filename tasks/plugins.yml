@@ -1,8 +1,7 @@
 ---
-
 - name: Install Logstash plugins
   logstash_plugin:
     state: present
     name: "{{ item }}"
-  with_items: "{{ logstash_install_plugins }}"
+  loop: "{{ logstash_install_plugins }}"
   notify: restart logstash
