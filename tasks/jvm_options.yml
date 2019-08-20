@@ -1,0 +1,10 @@
+---
+
+- name: Create Logstash JVM options file
+  template:
+    src: "jvm.options.j2"
+    dest: "{{ logstash_config_dir }}/jvm.options"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart logstash
